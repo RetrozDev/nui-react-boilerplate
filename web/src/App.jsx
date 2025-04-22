@@ -7,7 +7,7 @@ import { NuiProvider, useNuiEvent, useNuiContext } from "./hooks/useNui";
 function AppContent() {
 	const { setVisible } = useNuiContext();
 
-	useNuiEvent("showUI", (data) => {
+	useNuiEvent("toggleUi", (data) => {
 		setVisible(data.show);
 	});
 

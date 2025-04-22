@@ -2,8 +2,8 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 // Context for managing NUI visibility state
 const NuiContext = createContext({
-    visible: false,
-    setVisible: () => {},
+	visible: false,
+	setVisible: () => {},
 });
 
 /**
@@ -12,19 +12,13 @@ const NuiContext = createContext({
  * @param {React.ReactNode} props.children - Child components
  */
 export const NuiProvider = ({ children }) => {
-    const [visible, setVisible] = useState(false);
+	const [visible, setVisible] = useState(false);
 
-    return (
-        <NuiContext.Provider value={{ visible, setVisible }}>
-            <div style={{ 
-                display: visible ? 'block' : 'none',
-                height: '100%',
-                width: '100%'
-            }}>
-                {children}
-            </div>
-        </NuiContext.Provider>
-    );
+	return (
+		<NuiContext.Provider value={{ visible, setVisible }}>
+			{visible && <div id="nui-root">{children}</div>}
+		</NuiContext.Provider>
+	);
 };
 
 /**
@@ -33,30 +27,30 @@ export const NuiProvider = ({ children }) => {
  * @param {Function} handler - Callback function to handle the event
  */
 export const useNuiEvent = (action, handler) => {
-    useEffect(() => {
-        const eventListener = (event) => {
-            const { data } = event;
-            if (data?.action === action) {
-                handler(data);
-            }
-        };
+	useEffect(() => {
+		const eventListener = (event) => {
+			const { data } = event;
+			if (data?.action === action) {
+				handler(data);
+			}
+		};
 
-        window.addEventListener("message", eventListener);
-        return () => window.removeEventListener("message", eventListener);
-    }, [action, handler]);
+		window.addEventListener("message", eventListener);
+		return () => window.removeEventListener("message", eventListener);
+	}, [action, handler]);
 };
 
 // Listen for ESC key to close UI
 window.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-        fetch(`https://${GetParentResourceName()}/closeUi`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({})
-        });
-    }
+	if (event.key === "Escape") {
+		fetch(`https://${GetParentResourceName()}/closeUi`, {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({}),
+		});
+	}
 });
 
 /**
@@ -64,5 +58,5 @@ window.addEventListener("keydown", (event) => {
  * @returns {Object} NUI context value
  */
 export const useNuiContext = () => {
-    return useContext(NuiContext);
+	return useContext(NuiContext);
 };
