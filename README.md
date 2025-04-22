@@ -6,7 +6,6 @@ A modern React boilerplate for creating NUI (New User Interface) resources for F
 
 - React 18 
 - Vite for fast development and building
-- TailwindCSS for styling
 - Biome Js for code quality
 - Hot module replacement (HMR) for development
 - Pre-configured FiveM NUI callbacks and events
