@@ -1,0 +1,21 @@
+{
+  "name": "era-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "pnpm build:game && pnpm build:web",
+    "build:game": "tsc",
+    "build:web": "pnpm --filter web build",
+    "dev:web": "pnpm --filter web dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.28.0",
+  "devDependencies": {
+    "@citizenfx/client": "2.0.31039-1",
+    "@citizenfx/server": "2.0.31039-1",
+    "typescript": "^6.0.3"
+  }
+}

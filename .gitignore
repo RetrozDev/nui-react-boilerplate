@@ -1,0 +1,47 @@
+node_modules
+app
+
+# Build output (kept in repo for FiveM)
+# app/ is intentionally tracked — FiveM requires built files
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Cache
+.cache
+*.tsbuildinfo
+node_modules/.cache
+
+# Coverage
+coverage
+
+# Alternative package managers (pnpm is used)
+package-lock.json
+yarn.lock
+bun.lockb
