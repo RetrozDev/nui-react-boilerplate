@@ -81,8 +81,6 @@ This outputs:
 ```
 era-ui/
 ├── fxmanifest.lua          # FiveM resource manifest
-├── package.json            # Root monorepo package
-├── pnpm-lock.yaml
 ├── .gitignore
 ├── app/                    # Vite build output (served as ui_page)
 │   └── index.html
