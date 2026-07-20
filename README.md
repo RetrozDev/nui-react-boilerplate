@@ -70,7 +70,6 @@ pnpm build
 
 This outputs:
 - The React bundle to `app/` (served as the NUI page by FiveM)
-- Compiled game scripts to `game/client/` and `game/server/`
 
 ---
 
@@ -87,9 +86,6 @@ era-ui/
 │   └── nui/
 │       ├── main.lua        # Core Nui.Toggle() helper
 │       └── menu.lua        # Menu-specific toggle logic
-├── game/                   # TypeScript game scripts
-│   ├── client/
-│   └── server/
 └── web/                    # React frontend source
     ├── index.html
     ├── package.json
