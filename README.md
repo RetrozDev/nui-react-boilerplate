@@ -20,7 +20,6 @@ A modern, type-safe boilerplate for building NUI  overlays in FiveM using **Reac
 - **`web/`** — React + Vite + TypeScript frontend (the NUI layer)
 - **`client/`** — Lua scripts loaded by FiveM (toggles UI, passes data)
 - **`app/`** — Built output from Vite (served as the NUI page by FiveM)
-- **`game/`** — TypeScript game scripts compiled to JS (client & server)
 
 ---
 
@@ -34,7 +33,6 @@ A modern, type-safe boilerplate for building NUI  overlays in FiveM using **Reac
 | Styling | Sass (SCSS) |
 | Package Manager | pnpm 10 |
 | Linting | ESLint 10 (flat config) |
-| Game Types | `@citizenfx/client` / `@citizenfx/server` |
 
 ---
 
@@ -57,14 +55,14 @@ pnpm install
 Run the Vite dev server with hot module replacement (HMR) on port 5173:
 
 ```bash
-pnpm dev:web
+pnpm web
 ```
 
 When running in a browser (not inside FiveM), the menu component displays automatically with a GTA-themed background for easier development. No FiveM client is required for UI development.
 
 ### Production Build
 
-Build the React app and TypeScript game scripts:
+Build the React app:
 
 ```bash
 pnpm build
@@ -307,15 +305,6 @@ When running in a browser (outside FiveM), the app detects dev mode automaticall
 ---
 
 ## Scripts
-
-### Root
-
-| Script | Description |
-|---|---|
-| `pnpm build` | Build game scripts + React app |
-| `pnpm build:game` | Compile TypeScript game scripts |
-| `pnpm build:web` | Build React app to `app/` |
-| `pnpm dev:web` | Start Vite dev server |
 
 ### Web (`web/`)
 
