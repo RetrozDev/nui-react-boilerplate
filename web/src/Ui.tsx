@@ -1,6 +1,8 @@
 import { lazy, Suspense, useState, type LazyExoticComponent } from "react";
 import { data } from "./data/default";
 import { useNuiEvent } from "./hooks/useNuiEvent";
+import "./_ui.scss";
+
 
 declare global {
 	interface Window {
